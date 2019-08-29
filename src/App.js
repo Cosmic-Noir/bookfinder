@@ -7,9 +7,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: ["Something Silly", "Another Silly"],
+      books: [],
       showBookList: true
     };
+  }
+
+  componentDidMount() {
+    // const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
+    const url = "https://www.googleapis.com/books/v1/volumes?q=love";
+    // const options = {
+    //   method: "GET",
+    //   headers: {
+    //     Authorization: apiKey,
+    //     "Content-Type": "application/json"
+    //   }
+    // };
+
+    fetch(url)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Something went wrong!");
+        }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        this.setState({ books: data, error: null });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      });
   }
 
   render() {
