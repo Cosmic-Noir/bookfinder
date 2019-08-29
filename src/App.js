@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       books: [],
-      searchTerm: "truth",
+      searchTerm: "romance",
       showBookList: true
     };
   }
@@ -44,13 +44,17 @@ class App extends Component {
       });
   }
 
+  setSearchTerm(term) {
+    this.setState({ searchTerm: term });
+  }
+
   render() {
     return (
       <div className="App">
         <div className="header">
           <h1>BookFinder</h1>
         </div>
-        <SearchForm />
+        <SearchForm handleSearch={term => this.setSearchTerm(term)} />
         <BookList bookList={this.state.books} />
       </div>
     );

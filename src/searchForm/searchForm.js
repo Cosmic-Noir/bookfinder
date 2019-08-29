@@ -1,17 +1,31 @@
 import React, { Component } from "react";
+import "./searchForm.css";
 
 class SearchForm extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className="searchForm">
         <form>
           <label htmlFor="search">Search:</label>
-          <input type="text"></input>
-          <button type="submit">Search</button>
+          <input
+            type="text"
+            onChange={e => this.props.handleSearch(e.target.value)}
+          ></input>
+          <button type="submit">Search</button> <br></br>
           <label htmlFor="printType">Print Type:</label>
-          <input type="option"></input>
+          <select id="printType">
+            <option value="">All</option>
+            <option value="">Unknown</option>
+          </select>
           <label htmlFor="bookType">Book Type:</label>
-          <input type="option"></input>
+          <select id="bookType">
+            <option value="">No Filter</option>
+            <option value="">Free E-book</option>
+          </select>
         </form>
       </div>
     );

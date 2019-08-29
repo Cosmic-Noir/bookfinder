@@ -1,0 +1,10 @@
+form,
+input,
+label {
+  margin: 10px;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+}
