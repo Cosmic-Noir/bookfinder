@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class Book extends Component {
   render() {
-    return <h2>A book</h2>;
+    return (
+      <div className="book">
+        <h3 className="title">{}</h3>
+      </div>
+    );
   }
 }
 
