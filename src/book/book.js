@@ -4,7 +4,9 @@ class Book extends Component {
   render() {
     return (
       <div className="book">
-        <h3 className="title">{this.props.volumeInfo.title}</h3>
+        <h2 className="title">{this.props.volumeInfo.title}</h2>
+        <h4 className="authors">{this.props.volumeInfo.authors}</h4>
+        <p className="description">{this.props.volumeInfo.description}</p>
       </div>
     );
   }
