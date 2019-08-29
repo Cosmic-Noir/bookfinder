@@ -8,13 +8,15 @@ class App extends Component {
     super(props);
     this.state = {
       books: [],
+      searchTerm: "truth",
       showBookList: true
     };
   }
 
   componentDidMount() {
     // const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
-    const url = "https://www.googleapis.com/books/v1/volumes?q=love";
+    const url =
+      "https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchTerm;
     // const options = {
     //   method: "GET",
     //   headers: {
