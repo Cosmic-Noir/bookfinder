@@ -68,10 +68,6 @@ class App extends Component {
     this.setState({ filter: filter });
   }
 
-  setBookList(books) {
-    this.setState({ books: books });
-  }
-
   render() {
     console.log(this.state.searchTerm);
     console.log(this.state.printType);
@@ -82,7 +78,6 @@ class App extends Component {
           <h1>BookFinder</h1>
         </div>
         <SearchForm
-          books={this.state.books}
           searchTerm={this.state.searchTerm}
           printType={this.state.printType}
           filterType={this.state.filter}
