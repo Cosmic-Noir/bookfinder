@@ -63,7 +63,10 @@ class App extends Component {
         <div className="header">
           <h1>BookFinder</h1>
         </div>
-        <SearchForm handleSearch={term => this.setSearchTerm(term)} />
+        <SearchForm
+          searchTerm={this.state.searchTerm}
+          handleSearch={term => this.setSearchTerm(term)}
+        />
         <BookList bookList={this.state.books} />
       </div>
     );

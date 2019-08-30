@@ -13,6 +13,7 @@ class SearchForm extends Component {
           <label htmlFor="search">Search:</label>
           <input
             type="text"
+            value={this.props.searchTerm}
             onChange={e => this.props.handleSearch(e.target.value)}
           ></input>
           <button type="submit">Search</button> <br></br>
