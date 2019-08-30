@@ -69,7 +69,9 @@ class App extends Component {
         </div>
         <SearchForm
           searchTerm={this.state.searchTerm}
-          handleSearch={term => this.setSearchTerm(term)}
+          printType={this.state.printType}
+          updateSearchTerm={term => this.setSearchTerm(term)}
+          handleSearch={this.getData}
         />
         <BookList bookList={this.state.books} />
       </div>

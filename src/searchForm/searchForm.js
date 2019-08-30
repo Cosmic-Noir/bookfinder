@@ -4,6 +4,7 @@ import "./searchForm.css";
 class SearchForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
+    this.props.handleSearch();
   }
 
   render() {
@@ -14,7 +15,7 @@ class SearchForm extends Component {
           <input
             type="text"
             value={this.props.searchTerm}
-            onChange={e => this.props.handleSearch(e.target.value)}
+            onChange={e => this.props.updateSearchTerm(e.target.value)}
           ></input>
           <button type="submit">Search</button> <br></br>
           <label htmlFor="printType">Print Type:</label>
