@@ -73,6 +73,7 @@ class App extends Component {
           printType={this.state.printType}
           updateSearchTerm={term => this.setSearchTerm(term)}
           updatePrintType={type => this.setPrintType(type)}
+          handleSearch={this.getData()}
         />
         <BookList bookList={this.state.books} />
       </div>
