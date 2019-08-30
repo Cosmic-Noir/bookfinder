@@ -10,7 +10,8 @@ class App extends Component {
       books: [],
       searchTerm: "romance",
       showBookList: true,
-      printType: "all"
+      printType: "all",
+      filter: ""
     };
   }
 
@@ -20,11 +21,13 @@ class App extends Component {
 
   getData() {
     // const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
+    const filter = this.state.filter ? "&filter=" + this.state.filter : "";
     const url =
       "https://www.googleapis.com/books/v1/volumes?q=" +
       this.state.searchTerm +
       "&printType=" +
-      this.state.printType;
+      this.state.printType +
+      filter;
     // const options = {
     //   method: "GET",
     //   headers: {
@@ -74,7 +77,6 @@ class App extends Component {
           printType={this.state.printType}
           updateSearchTerm={term => this.setSearchTerm(term)}
           updatePrintType={type => this.setPrintType(type)}
-          handleSearch={this.getData()}
         />
         <BookList bookList={this.state.books} />
       </div>
@@ -83,3 +85,5 @@ class App extends Component {
 }
 
 export default App;
+
+// handleSearch={this.getData()}
