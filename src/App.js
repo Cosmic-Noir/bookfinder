@@ -32,6 +32,7 @@ class App extends Component {
     //     "Content-Type": "application/json"
     //   }
     // };
+    console.log(url);
 
     fetch(url)
       .then(res => {

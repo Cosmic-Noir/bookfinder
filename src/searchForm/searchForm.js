@@ -10,7 +10,7 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="searchForm">
-        <form>
+        <form onSubmit={e => this.handleSubmit(e)}>
           <label htmlFor="search">Search:</label>
           <input
             type="text"
