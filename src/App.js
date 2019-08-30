@@ -54,6 +54,7 @@ class App extends Component {
           error: err.message
         });
       });
+    console.log("books should be updated");
   }
 
   setSearchTerm(term) {
@@ -84,7 +85,7 @@ class App extends Component {
           updateSearchTerm={term => this.setSearchTerm(term)}
           updatePrintType={type => this.setPrintType(type)}
           updateFilterType={filter => this.setFilterType(filter)}
-          handleSearch={this.getData()}
+          handleSearch={() => this.getData()}
         />
         <BookList bookList={this.state.books} />
       </div>
