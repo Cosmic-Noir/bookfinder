@@ -18,8 +18,8 @@ class SearchForm extends Component {
           <button type="submit">Search</button> <br></br>
           <label htmlFor="printType">Print Type:</label>
           <select id="printType">
-            <option value="">All</option>
-            <option value="">Unknown</option>
+            <option value="all">All</option>
+            <option value="magazines">Magazines</option>
           </select>
           <label htmlFor="bookType">Book Type:</label>
           <select id="bookType">

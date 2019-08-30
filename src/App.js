@@ -9,14 +9,18 @@ class App extends Component {
     this.state = {
       books: [],
       searchTerm: "romance",
-      showBookList: true
+      showBookList: true,
+      printType: "all"
     };
   }
 
   componentDidMount() {
     // const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
     const url =
-      "https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchTerm;
+      "https://www.googleapis.com/books/v1/volumes?q=" +
+      this.state.searchTerm +
+      "&printType=" +
+      this.state.printType;
     // const options = {
     //   method: "GET",
     //   headers: {
@@ -48,7 +52,12 @@ class App extends Component {
     this.setState({ searchTerm: term });
   }
 
+  setPrintType(type) {
+    this.setState({ printType: type });
+  }
+
   render() {
+    console.log(this.state.searchTerm);
     return (
       <div className="App">
         <div className="header">
