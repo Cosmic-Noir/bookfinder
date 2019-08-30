@@ -19,7 +19,11 @@ class SearchForm extends Component {
           ></input>
           <button type="submit">Search</button> <br></br>
           <label htmlFor="printType">Print Type:</label>
-          <select id="printType">
+          <select
+            id="printType"
+            value={this.props.printType}
+            onChange={e => this.props.updatePrintType(e.target.value)}
+          >
             <option value="all">All</option>
             <option value="magazines">Magazines</option>
           </select>

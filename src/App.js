@@ -19,12 +19,14 @@ class App extends Component {
   }
 
   getData() {
-    // const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
+    const apiKey = "AIzaSyDkAT1wZ-W1ANMt9y6ajVDTlhPxJsE4AHs";
     const url =
       "https://www.googleapis.com/books/v1/volumes?q=" +
       this.state.searchTerm +
       "&printType=" +
-      this.state.printType;
+      this.state.printType +
+      "&key=" +
+      apiKey;
     // const options = {
     //   method: "GET",
     //   headers: {
@@ -62,6 +64,7 @@ class App extends Component {
 
   render() {
     console.log(this.state.searchTerm);
+    console.log(this.state.printType);
     return (
       <div className="App">
         <div className="header">
@@ -71,7 +74,8 @@ class App extends Component {
           searchTerm={this.state.searchTerm}
           printType={this.state.printType}
           updateSearchTerm={term => this.setSearchTerm(term)}
-          handleSearch={this.getData}
+          updatePrintType={type => this.setPrintType(type)}
+          handleSearch={this.getData()}
         />
         <BookList bookList={this.state.books} />
       </div>
