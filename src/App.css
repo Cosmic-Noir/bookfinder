@@ -1,5 +1,11 @@
 .App {
   text-align: center;
-  padding: 10px;
-  margin: 10px;
+}
+
+.header {
+  background: black;
+  color: white;
+  font-size: 30px;
+  padding: 30px;
+  width: 100%;
 }
