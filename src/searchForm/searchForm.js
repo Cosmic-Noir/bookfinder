@@ -28,7 +28,11 @@ class SearchForm extends Component {
             <option value="magazines">Magazines</option>
           </select>
           <label htmlFor="bookType">Book Type:</label>
-          <select id="bookType">
+          <select
+            id="bookType"
+            value={this.props.filterType}
+            onChange={e => this.props.updateFilterType(e.target.value)}
+          >
             <option value="">No Filter</option>
             <option value="">Free E-book</option>
           </select>

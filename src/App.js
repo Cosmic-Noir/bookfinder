@@ -64,9 +64,14 @@ class App extends Component {
     this.setState({ printType: type });
   }
 
+  setFilterType(filter) {
+    this.setState({ filter: filter });
+  }
+
   render() {
     console.log(this.state.searchTerm);
     console.log(this.state.printType);
+    console.log(this.state.filter);
     return (
       <div className="App">
         <div className="header">
@@ -75,8 +80,10 @@ class App extends Component {
         <SearchForm
           searchTerm={this.state.searchTerm}
           printType={this.state.printType}
+          filterType={this.state.filter}
           updateSearchTerm={term => this.setSearchTerm(term)}
           updatePrintType={type => this.setPrintType(type)}
+          updateFilterType={filter => this.setFilterType(filter)}
         />
         <BookList bookList={this.state.books} />
       </div>
