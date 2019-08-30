@@ -34,7 +34,10 @@ class SearchForm extends Component {
             onChange={e => this.props.updateFilterType(e.target.value)}
           >
             <option value="">No Filter</option>
-            <option value="">Free E-book</option>
+            <option value="free-ebooks">Free E-books</option>
+            <option value="partial">Partial Previewable</option>
+            <option value="full">Full Text Viewable</option>
+            <option value="paid-ebooks">Paid E-books</option>
           </select>
         </form>
       </div>
