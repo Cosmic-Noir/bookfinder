@@ -50,6 +50,7 @@ class App extends Component {
         this.setState({ books: data.items, error: null });
       })
       .catch(err => {
+        alert(err.message);
         this.setState({
           error: err.message
         });
